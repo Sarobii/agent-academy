@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .card-gradient {
+    @apply bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-md border border-white/20;
+  }
+  
+  .agent-card {
+    @apply relative overflow-hidden rounded-xl p-6 transition-all duration-300 hover:scale-105 hover:shadow-xl;
+  }
+  
+  .agent-builder {
+    @apply bg-gradient-to-br from-blue-500/20 to-cyan-500/20 border-blue-300/30;
+  }
+  
+  .agent-learner {
+    @apply bg-gradient-to-br from-green-500/20 to-emerald-500/20 border-green-300/30;
+  }
+  
+  .agent-enhancer {
+    @apply bg-gradient-to-br from-purple-500/20 to-violet-500/20 border-purple-300/30;
+  }
+  
+  .agent-integrator {
+    @apply bg-gradient-to-br from-orange-500/20 to-red-500/20 border-orange-300/30;
+  }
+  
+  .activity-item {
+    @apply flex items-start space-x-3 p-4 rounded-lg bg-white/5 border border-white/10 transition-all duration-200 hover:bg-white/10;
+  }
+  
+  .skill-badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/20 text-white/90 border border-white/30;
+  }
+  
+  .mcp-card {
+    @apply bg-gradient-to-r from-slate-800/80 to-slate-700/80 backdrop-blur-sm border border-slate-600/50 rounded-xl p-6 transition-all duration-300 hover:shadow-lg hover:border-slate-500/60;
+  }
+  
+  .pulse-animation {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .slide-in {
+    animation: slideIn 0.5s ease-out;
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .glow-effect {
+    @apply relative;
+  }
+  
+  .glow-effect::before {
+    content: '';
+    @apply absolute inset-0 rounded-xl opacity-75 blur-xl;
+  }
+  
+  .status-active {
+    @apply text-green-400;
+  }
+  
+  .status-working {
+    @apply text-yellow-400;
+  }
+  
+  .status-idle {
+    @apply text-gray-400;
+  }
+  
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.1);
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+  }
+  
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
